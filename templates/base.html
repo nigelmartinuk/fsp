@@ -1,12 +1,40 @@
+<!-- Flask website base template nme@202205181500 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}"> 
+    <script src="{{url_for('static', filename = 'js/timeclock.js')}}" ></script>    
+    <script src="{{url_for('static', filename = 'js/app.js')}}" ></script>    
+    {% block custom_scripts %}
+    <!-- Custom scripts will be inserted here -->
+    {% endblock %}
+    <title>
+        {% block title %}
+        <!-- unique page title is inserted here -->
+        {% endblock %}
+    </title>
 </head>
-<body>
-    
+
+<body onload="startClock()">
+    <header>
+        <div></div><div id='appClockTxt'></div>
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        {% block content %}
+        <!-- HTML tween block and endblock appears atop each website page -->
+        {% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+
 </body>
+
 </html>
