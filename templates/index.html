@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Home
+My Movies
 {% endblock %}
 
 {% block content %}
-<p>index</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque eligendi sit dolores sed consequatur labore
-    reprehenderit aut cupiditate repellendus quidem!</p>
-
+<div id="main">
+    <nav>
+        <div class="clickme"><img id="akira" class="thumb" src="/static/img/thumb_akira.jpg" /></div>
+        <div class="clickme"><img id="atlantis" class="thumb" src="/static/img/thumb_atlantis.jpg" /></div>
+        <div class="clickme"><img id="cryingfreeman" class="thumb" src="/static/img/thumb_cryingfreeman.jpg" /></div>
+        <div class="clickme"><img id="fringe" class="thumb" src="/static/img/thumb_fringe.jpg" /></div>
+        <div class="clickme"><img id="princessbride" class="thumb" src="/static/img/thumb_princessbride.jpg" /></div>
+        <div class="clickme"><img id="reddwarf" class="thumb" src="/static/img/thumb_reddwarf.jpg" /></div>
+        <div class="clickme"><img id="rogueone" class="thumb" src="/static/img/thumb_rogueone.jpg" /></div>
+        <div class="clickme"><img id="sg1" class="thumb" src="/static/img/thumb_sg1.jpg" /></div>
+    </nav>
+    <div id="bigimg"></div>
+</div>
 {% endblock %}

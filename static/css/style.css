@@ -56,3 +56,17 @@ body {
 #navbar div a:link {
     text-decoration: none;
 }
+
+.thumb {
+    height: 98px;
+    width: 67px;
+}
+
+#bigimg {
+    display: block;
+    height: 700px;
+    width: 400px;
+    background-color: pink;
+}
+
+
