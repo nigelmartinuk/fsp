@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Raleway:wght@200&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 /* Apply imported font to body */
 body {
     font-family: 'IBM Plex Serif', serif;
@@ -56,17 +60,48 @@ body {
 #navbar div a:link {
     text-decoration: none;
 }
+/*********************************/
+
+/* flex box additions */
+#main {
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+}
 
 .thumb {
-    height: 98px;
-    width: 67px;
+    display: block;
+    /* height: 98px; */
+    width: 80px;
+    border: 5px;
+    border-color: red;
+}
+
+.clickme {
+
 }
 
 #bigimg {
     display: block;
-    height: 700px;
-    width: 400px;
+    hieght: 70%;
+    width: 30%;
     background-color: pink;
+    margin: 0.5em;
+    background:
+    url("/static/img/large_atlantis.jpg") no-repeat,
+    url("/static/img/large_cryingfreeman.jpg") no-repeat,
+    url("/static/img/large_fringe.jpg") no-repeat,
+    url("/static/img/large_princessbride.jpg") no-repeat,
+    url("/static/img/large_reddwarf.jpg") no-repeat,
+    url("/static/img/large_rogueone.jpg") no-repeat,
+    url("/static/img/large_sg1.jpg") no-repeat;
 }
 
-
+.large_atlantis { background: url("/static/img/large_atlantis.jpg") no-repeat;}
+.large_cryingfreeman { background: url("/static/img/large_cryingfreeman.jpg") no-repeat;}
+.large_fringe { background: url("/static/img/large_fringe.jpg") no-repeat;}
+.large_princessbride { background: url("/static/img/large_princessbride.jpg") no-repeat;}
+.large_reddwarf { background: url("/static/img/large_reddwarf.jpg") no-repeat;}
+.large_rogueone { background: url("/static/img/large_rogueone.jpg") no-repeat;}
+.large_sgi { background: url("/static/img/large_sg1.jpg") no-repeat;}
