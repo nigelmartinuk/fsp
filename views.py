@@ -28,18 +28,26 @@ def basic_redirects():
 
 def get_url(url):
     dict = {
-        'opp':              'opportunity.html',
-        'opportunity':      'opportunity.html',
-        'desk':             'desk_selection.html',
-        'desk_selection':   'desk_selection.html',
-        'io':               'io_selection.html',
-        'io_selection':     'io_selection.html',
-        'spares':           'spares_selection.html',
-        'spares_selection': 'spares_selection.html',
-        'quote':            'quote_document.html',
-        'quote_document':   'quote_document.html',
-        'order':            'order_detail.html',
-        'order_detail':     'order_detail.html'}
+        'akira':             'akira.html',
+        'atlantis':          'atlantis.html',
+        'stargateatlantis':  'atlantis.html',
+        'stargate_atlantis': 'atlantis.html',
+        'stargate atlantis': 'atlantis.html',
+        'cryingfreeman':     'cryingfreeman.html',
+        'crying_freeman':    'cryingfreeman.html',
+        'crying freeman':    'cryingfreeman.html',
+        'fringe':            'fringe.html',
+        'reddwarf':          'reddwarf.html',
+        'red_dwarf':         'reddwarf.html',
+        'red dwarf':         'reddwarf.html',
+        'rogueone':          'rogueone.html',
+        'rogue_one':         'rogueone.html',
+        'rogue one':         'rogueone.html',
+        'rogue1':            'rogueone.html',
+        'rogue_1':           'rogueone.html',
+        'rogue 1':           'rogueone.html',
+        'stargate':          'stargate.html'
+        }
 
     try:
         html_str = dict[url.lower()]  # assign html filename if key matches
