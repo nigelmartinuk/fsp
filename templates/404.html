@@ -1,0 +1,8 @@
+<!-- instruct flask to use base.html as the initial template for this webpage -->
+{% extends 'base.html' %}
+<!-- denote the beginning of this html file's flask pre processible content -->
+
+{% block content %}
+<h3>404 Error Page</h3>
+<h4> There was an error - <br> {{e}}</h4>
+{% endblock %}

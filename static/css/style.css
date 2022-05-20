@@ -1,0 +1,58 @@
+/* a non-standard font, either using font-face or Goole fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Raleway:wght@200&display=swap');
+
+/* Apply imported font to body */
+body {
+    font-family: 'IBM Plex Serif', serif;
+}
+
+/* one class */
+.movie-item {
+    font-size: 1em;
+    color: darkblue;
+}
+
+/* one id. Remove bullet point from movie list */
+#movie-list {
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    /* Apply imported font */
+}
+
+/* pseudo class. Enlarge movie item when hovering over it*/
+#movie-list li:hover {
+    font-size: 2em;
+}
+
+/* some element sizing */
+#python_img {
+    height: 50%;
+    width: 50%
+}
+
+/* flex box additions */
+#navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+}
+
+/* pad and default colour menu links */
+#navbar div a {
+    color: white;
+    background-color: darkblue;
+    padding: 10px;
+}
+
+/* emphasize menu item with colour swap on hover */
+#navbar div a:hover {
+    color: darkblue;
+    background-color: white;
+}
+
+/* remove default link decoration */
+#navbar div a:link {
+    text-decoration: none;
+}

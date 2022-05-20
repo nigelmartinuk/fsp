@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, request, Blueprint
+from flask import render_template, redirect, url_for, request, Blueprint, abort
 
 # A blueprint is an object that allows defining application functions
 # without requiring an application object ahead of time. It uses the
@@ -12,56 +12,42 @@ le_views = Blueprint('fsp', __name__,
                      static_folder='static')
 
 # default route points to the opportunity detail page
+
+
 @le_views.route("/")
 def landing_page():
     return render_template('index.html')
 
 # these three routes point to the index.html page
+
 @le_views.route("/index")
 @le_views.route("/default")
 @le_views.route("/home")
 def basic_redirects():
     return redirect(url_for("fsp.landing_page"))
 
-# A marketing opportunity is a sales-accepted lead that has been
-# qualified as being in need of a product. The sales representative
-# determines that there is an opportunity to sell to this individual
-# or company.
-@le_views.route("/opp")
-@le_views.route("/opportunity")
-def opportunity_detail():
-    return render_template('opportunity.html')
+def get_url(url):
+    dict = {
+        'opp':              'opportunity.html',
+        'opportunity':      'opportunity.html',
+        'desk':             'desk_selection.html',
+        'desk_selection':   'desk_selection.html',
+        'io':               'io_selection.html',
+        'io_selection':     'io_selection.html',
+        'spares':           'spares_selection.html',
+        'spares_selection': 'spares_selection.html',
+        'quote':            'quote_document.html',
+        'quote_document':   'quote_document.html',
+        'order':            'order_detail.html',
+        'order_detail':     'order_detail.html'}
 
-# If consoles (control desks) are required they are selected, designed,
-# customised detailed here.
-@le_views.route("/desk")
-@le_views.route("/desk_selection")
-def desk_selection():
-    return render_template('desk_selection.html')
+    try:
+        html_str = dict[url.lower()]  # assign html filename if key matches
+    except:
+        html_str = '404.html'  # otherwise assign error page
 
-# If io boxes are required they are detailed here.
-@le_views.route("/io")
-@le_views.route("/io_selection")
-def io_selection():
-    return render_template('io_selection.html')
+    return html_str
 
-# If spare parts are required they are detailed here.
-@le_views.route("/spares")
-@le_views.route("/spares_selection")
-def spares_selection():
-    return render_template('spares_selection.html')
-
-# The quotation is built here. Functionality for optional extras and
-# document customisation is a first tier requirement.
-@le_views.route("/quote")
-@le_views.route("/quote_document")
-def quote_document():
-    return render_template('quote_document.html')
-
-# Order detail is a oneway dump of the SKU parts list required to
-# fulfil the quotation. This dump is meant for import into a MRP or ERP
-# system. Quote customisations are documented in a separate file.  
-@le_views.route("/order")
-@le_views.route("/order_detail")
-def order_detail():
-    return render_template('order_detail.html')
+@le_views.route("/<user_url>")
+def render_all(user_url):
+    return render_template(get_url(user_url))
