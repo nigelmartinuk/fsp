@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}"> 
-    <script src="{{url_for('static', filename = 'js/timeclock.js')}}" ></script>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+    <script src="{{url_for('static', filename = 'js/timeclock.js')}}"></script>
     {% block custom_scripts %}
     <!-- Custom scripts will be inserted here -->
     {% endblock %}
@@ -19,21 +19,20 @@
 </head>
 
 <body onload="appClock()">
-    <header>
-        <div></div>
-    </header>
-    <nav>
-
-    </nav>
-    <main>
-        {% block content %}
-        <!-- HTML tween block and endblock appears atop each website page -->
-        {% endblock %}
-    </main>
-    <footer>
-        <div id='appClockTxt'>[clock]</div>
-    </footer>
-    <script src="/static/js/timeclock.js"></script>
+    <div>
+        <header>
+            <div></div>
+        </header>
+        <main>
+            {% block content %}
+            <!-- HTML tween block and endblock appears atop each website page -->
+            {% endblock %}
+        </main>
+        <footer>
+            <div id='appClockTxt'>[clock]</div>
+        </footer>
+        <!-- <script src="/static/js/timeclock.js"></script> -->
+    </div>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Raleway:wght@200&display=swap');
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 /* Apply imported font to body */
@@ -11,71 +11,22 @@ body {
     font-family: 'IBM Plex Serif', serif;
 }
 
-/* one class */
-.movie-item {
-    font-size: 1em;
-    color: darkblue;
-}
-
-/* one id. Remove bullet point from movie list */
-#movie-list {
-    list-style: none;
-    font-family: 'Raleway', sans-serif;
-    /* Apply imported font */
-}
-
-/* pseudo class. Enlarge movie item when hovering over it*/
-#movie-list li:hover {
-    font-size: 2em;
-}
-
-/* some element sizing */
-#python_img {
-    height: 50%;
-    width: 50%
-}
-
-/* flex box additions */
 #navbar {
     display: flex;
-    flex-wrap: nowrap;
-    font-family: 'Raleway', sans-serif;
-    font-size: 2em;
-}
-
-/* pad and default colour menu links */
-#navbar div a {
-    color: white;
-    background-color: darkblue;
-    padding: 10px;
-}
-
-/* emphasize menu item with colour swap on hover */
-#navbar div a:hover {
-    color: darkblue;
-    background-color: white;
-}
-
-/* remove default link decoration */
-#navbar div a:link {
-    text-decoration: none;
-}
-/*********************************/
-
-/* flex box additions */
-#main {
-    display: flex;
-    flex-wrap: nowrap;
-    font-family: 'Raleway', sans-serif;
-    font-size: 2em;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    flex-direction: column;
+    background-color: aqua;
+    width: 1000px;
+    height: 700px;
 }
 
 .thumb {
     display: block;
-    /* height: 98px; */
-    width: 80px;
-    border: 5px;
-    border-color: red;
+    height: 98px;
+    width: 75px;
+    padding: 0;
+    margin: 0;
 }
 
 .clickme {
@@ -84,8 +35,9 @@ body {
 
 #bigimg {
     display: block;
-    hieght: 70%;
-    width: 30%;
+    visibility: hidden;
+    height: 820px;
+    width: 577px;
     background-color: pink;
     margin: 0.5em;
     background:
@@ -98,10 +50,18 @@ body {
     url("/static/img/large_sg1.jpg") no-repeat;
 }
 
-.large_atlantis { background: url("/static/img/large_atlantis.jpg") no-repeat;}
-.large_cryingfreeman { background: url("/static/img/large_cryingfreeman.jpg") no-repeat;}
-.large_fringe { background: url("/static/img/large_fringe.jpg") no-repeat;}
-.large_princessbride { background: url("/static/img/large_princessbride.jpg") no-repeat;}
-.large_reddwarf { background: url("/static/img/large_reddwarf.jpg") no-repeat;}
-.large_rogueone { background: url("/static/img/large_rogueone.jpg") no-repeat;}
-.large_sgi { background: url("/static/img/large_sg1.jpg") no-repeat;}
+.large_atlantis { background-image: url("/static/img/large_atlantis.jpg") no-repeat;}
+.large_cryingfreeman { background-image: url("/static/img/large_cryingfreeman.jpg") no-repeat;}
+.large_fringe { background-image: url("/static/img/large_fringe.jpg") no-repeat;}
+.large_princessbride { background-image: url("/static/img/large_princessbride.jpg") no-repeat;}
+.large_reddwarf { background-image: url("/static/img/large_reddwarf.jpg") no-repeat;}
+.large_rogueone { background-image: url("/static/img/large_rogueone.jpg") no-repeat;}
+.large_sgi { background-image: url("/static/img/large_sg1.jpg") no-repeat;}
+
+.thumb1 { background-image: url("/static/img/thumb_atlantis.jpg") no-repeat;}
+.thumb2 { background-image: url("/static/img/thumb_cryingfreeman.jpg") no-repeat;}
+.thumb3 { background-image: url("/static/img/thumb_fringe.jpg") no-repeat;}
+.thumb4 { background-image: url("/static/img/thumb_princessbride.jpg") no-repeat;}
+.thumb5 { background-image: url("/static/img/thumb_reddwarf.jpg") no-repeat;}
+.thumb6 { background-image: url("/static/img/thumb_rogueone.jpg") no-repeat;}
+.thumb7 { background-image: url("/static/img/thumb_sg1.jpg") no-repeat;}

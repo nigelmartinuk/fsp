@@ -5,17 +5,10 @@ My Movies
 {% endblock %}
 
 {% block content %}
-<div id="main">
-    <nav>
-        <div class="clickme"><img id="akira" class="thumb" src="/static/img/thumb_akira.jpg" /></div>
-        <div class="clickme"><img id="atlantis" class="thumb" src="/static/img/thumb_atlantis.jpg" /></div>
-        <div class="clickme"><img id="cryingfreeman" class="thumb" src="/static/img/thumb_cryingfreeman.jpg" /></div>
-        <div class="clickme"><img id="fringe" class="thumb" src="/static/img/thumb_fringe.jpg" /></div>
-        <div class="clickme"><img id="princessbride" class="thumb" src="/static/img/thumb_princessbride.jpg" /></div>
-        <div class="clickme"><img id="reddwarf" class="thumb" src="/static/img/thumb_reddwarf.jpg" /></div>
-        <div class="clickme"><img id="rogueone" class="thumb" src="/static/img/thumb_rogueone.jpg" /></div>
-        <div class="clickme"><img id="sg1" class="thumb" src="/static/img/thumb_sg1.jpg" /></div>
+    <nav id="navbar">
+        {% for x in range(25): %}
+          <div id="thumb{{x}}" class="clickme thumb thumb{{ range(1, 8) | random }}"></div>
+        {% endfor %}
     </nav>
     <div id="bigimg"></div>
-</div>
 {% endblock %}
