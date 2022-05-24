@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}
-My Movies
+{% block scrip %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/loadimgs.css')}}">
 {% endblock %}
+
+{% block title %}My Movies{% endblock %}
+
+{% block page_title %}My movies{% endblock %}
 
 {% block content %}
 <div id="main_bits">
@@ -19,16 +23,7 @@ My Movies
       </a>
     </div>
     {% endfor %}
-
-
-
   </nav>
-  <div id="bigimg">
-    <!-- <a id="bigimg_anchor" href="">GGGGG
-      <img id="bigimg_pic" src="" alt="">
-    </a> -->
-  </div>
-  <div id="comment"></div>
 </div>
 
 {% endblock %}

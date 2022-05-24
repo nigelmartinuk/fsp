@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Raleway:wght@200&display=swap');
 
 * {
-    display: block;
     box-sizing: border-box; 
 }
 
@@ -12,7 +11,7 @@ body {
     font-family: 'IBM Plex Serif', serif;
 }
 
-ain_bits {
+#main_bits {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -22,16 +21,32 @@ ain_bits {
     display: flex;
     flex-flow: column wrap;
     background-color: aqua;
-    min-height: 90vh;
-    width:150vw;
-    /* width:400px;
-    height: 700px; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-large;
+    padding-bottom: 1em;
+}
+
+#fullpage_text {
+    display: inline;
+    height:100vh;
+}
+
+.bigimg_settings {
+    float: left;
+    height: 60vh;
+    width: auto;
+    padding: 0 1em 1em 0;
+    margin: 0;
 }
 
 .thumb_settings {
     display: block;
-    height: 100px;
-    width: 75px;
+    height: 200px;
+    width: 150px;
     padding: 0;
     margin: 0;
     background-repeat: no-repeat;

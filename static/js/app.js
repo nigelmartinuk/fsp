@@ -32,6 +32,7 @@ function appClock() {
     m = zeroPrefix(m);
     s = zeroPrefix(s);
     document.getElementById('appClockTxt').innerHTML = h + ":" + m + ":" + s;
+
     setTimeout(appClock, 1000); // set timer callback for 1000ms
 }
 

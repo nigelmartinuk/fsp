@@ -12,7 +12,6 @@ le_views = Blueprint(
     "fsp", __name__, template_folder="templates", static_folder="static"
 )
 
-
 # hardcoded json dictionary until flask file load examples are found.
 # FSP require 5 html pages, 8 supplied
 favs = {
@@ -24,7 +23,7 @@ favs = {
     "princessbride": ["large_princessbride.jpg", "princessbride.html"],
     "reddwarf":      ["large_reddwarf.jpg",      "reddwarf.html"],
     "rogueone":      ["large_rogueone.jpg",      "rogueone.html"],
-    "sg1":           ["large_sg1.jpg",           "sg1e.html"]
+    "sg1":           ["large_sg1.jpg",           "sg1.html"]
 }
 
 @le_views.route("/")
