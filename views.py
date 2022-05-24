@@ -29,7 +29,7 @@ favs = {
 
 @le_views.route("/")
 def landing_page():
-    return render_template("index.html")
+    return render_template("index.html",favs=favs)
 
 @le_views.route("/index")
 @le_views.route("/default")
@@ -49,6 +49,6 @@ def get_url(url):
 @le_views.route("/<user_url>")  # route string from everything after domain
 def render_all(user_url):
     try:
-        return render_template(get_url(user_url))
+        return render_template(get_url(user_url),favs=favs)
     except TemplateNotFound:
         abort(500,"JSON Favourites: html file does not exist")

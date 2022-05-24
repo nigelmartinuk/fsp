@@ -6,15 +6,22 @@ My Movies
 
 {% block content %}
 <div id="main_bits">
-  <nav id="navbar">
+  <nav id="navblock">
 
-    <!-- Single row thumb_img placement -->
-    {% for x in range(8): %}
-
-    <div id="click_{{x}}" onclick="raiseBigImg('big_img{{x}}',)"
-         class="clickme thumb_settings thumb_img{{x}}">
+    <!-- { % for an_entry in favs.values() : % } -->
+    {% set url = url_for('static',filename="") %}
+    {% for id, vals in favs.items() : %}
+    <div>
+      {% set img, html = vals %}
+      <!-- <p>id:{{id}}<br>img:{{img}}<br>html:{{html}}</p> -->
+      <a href="/{{id}}">
+        <img class="thumb_settings" title="Click Me" src="{{url}}/img/{{img}}" alt="{{id}}_thumbnail">
+      </a>
     </div>
     {% endfor %}
+
+
+
   </nav>
   <div id="bigimg">
     <!-- <a id="bigimg_anchor" href="">GGGGG
