@@ -1,0 +1,18 @@
+
+/* The following css rule attaches these larger images to
+   an invisible div, forcing the caching of the images on
+   startup */
+   #autoimgload {
+    display: inline;
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+    background:
+    url("/static/img/large_atlantis.jpg") no-repeat,
+    url("/static/img/large_cryingfreeman.jpg") no-repeat,
+    url("/static/img/large_fringe.jpg") no-repeat,
+    url("/static/img/large_princessbride.jpg") no-repeat,
+    url("/static/img/large_reddwarf.jpg") no-repeat,
+    url("/static/img/large_rogueone.jpg") no-repeat,
+    url("/static/img/large_sg1.jpg") no-repeat;
+}

@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
-    {% block custom_scripts %}
-    <!-- Custom scripts will be inserted here -->
-    {% endblock %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/loadimgs.css')}}">
     <title>
         {% block title %}
         <!-- unique page title is inserted here -->Base - Missing title block
@@ -29,6 +27,7 @@
         </main>
         <footer>
             <div id='appClockTxt'>[clock]</div>
+            <div id="autoimgload"></div>
         </footer>
         <!-- <script src="/static/js/timeclock.js"></script> -->
     </div>

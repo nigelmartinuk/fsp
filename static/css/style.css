@@ -62,23 +62,6 @@ body {
     width: 500px;    
 }
 
-/* #bigimg {
-    display: inline;
-    /* visibility: hidden; * /
-    height: auto;
-    width: 100%;
-    background-color: pink;
-    background-size: contain;
-    background:
-    url("/static/img/large_atlantis.jpg") no-repeat,
-    url("/static/img/large_cryingfreeman.jpg") no-repeat,
-    url("/static/img/large_fringe.jpg") no-repeat,
-    url("/static/img/large_princessbride.jpg") no-repeat,
-    url("/static/img/large_reddwarf.jpg") no-repeat,
-    url("/static/img/large_rogueone.jpg") no-repeat,
-    url("/static/img/large_sg1.jpg") no-repeat;
-} */
-
 .big_img0 { background-image: url("/static/img/large_akira.jpg") ;}
 .big_img1 { background-image: url("/static/img/large_atlantis.jpg") ;}
 .big_img2 { background-image: url("/static/img/large_cryingfreeman.jpg") ;}

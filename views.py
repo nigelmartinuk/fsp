@@ -1,4 +1,5 @@
 from flask import render_template, redirect, url_for, request, Blueprint, abort
+from jinja2 import TemplateNotFound
 
 # A blueprint is an object that allows defining application functions
 # without requiring an application object ahead of time. It uses the
@@ -11,28 +12,20 @@ le_views = Blueprint(
     "fsp", __name__, template_folder="templates", static_folder="static"
 )
 
-# thumbs = {
-#     "akira": "thumb_akira.jpg",
-#     "atlantis": "thumb_atlantis.jpg",
-#     "cryingfreeman": "thumb_cryingfreeman.jpg",
-#     "fringe": "thumb_fringe.jpg",
-#     "princessbride": "thumb_princessbride.jpg",
-#     "reddwarf": "thumb_reddwarf.jpg",
-#     "rogueone": "thumb_rogueone.jpg",
-#     "sg1": "thumb_sg1.jpg",
-# }
 
-# default route points to the opportunity detail page
-# pathlist = {
-#     "akira": "akira.html",
-#     "atlantis": "atlantis.html",
-#     "cryingfreeman": "cryingfreeman.html",
-#     "fringe": "fringe.html",
-#     "princessbride": "princessbride.html",
-#     "reddwarf": "reddwarf.html",
-#     "rogueone": "rogueone.html",
-#     "stargate": "stargate.html",
-# }
+# hardcoded json dictionary until flask file load examples are found.
+# FSP require 5 html pages, 8 supplied
+favs = {
+    # key :          { image,                    html }
+    "akira":         ["large_akira.jpg",         "akira.html" ],
+    "atlantis":      ["large_atlantis.jpg",      "atlantis.html"],
+    "cryingfreeman": ["large_cryingfreeman.jpg", "cryingfreeman.html"],
+    "fringe":        ["large_fringe.jpg",        "fringe.html"],
+    "princessbride": ["large_princessbride.jpg", "princessbride.html"],
+    "reddwarf":      ["large_reddwarf.jpg",      "reddwarf.html"],
+    "rogueone":      ["large_rogueone.jpg",      "rogueone.html"],
+    "sg1":           ["large_sg1.jpg",           "sg1e.html"]
+}
 
 @le_views.route("/")
 def landing_page():
@@ -46,41 +39,16 @@ def basic_redirects():
 
 
 def get_url(url):
-    # define dictionary of accepted formats for known routes
-    # (refactor if time premits to a 'dictionary of lists'
-    #  reduce repplicated strings )
-    dict = {
-        "akira": "akira.html",
-        "atlantis": "atlantis.html",
-        "stargateatlantis": "atlantis.html",
-        "stargate_atlantis": "atlantis.html",
-        "stargate atlantis": "atlantis.html",
-        "cryingfreeman": "cryingfreeman.html",
-        "crying_freeman": "cryingfreeman.html",
-        "crying freeman": "cryingfreeman.html",
-        "fringe": "fringe.html",
-        "princessbride": "princessbride.html",
-        "princess_bride": "princessbride.html",
-        "princess bride": "princessbride.html",
-        "reddwarf": "reddwarf.html",
-        "red_dwarf": "reddwarf.html",
-        "red dwarf": "reddwarf.html",
-        "rogueone": "rogueone.html",
-        "rogue_one": "rogueone.html",
-        "rogue one": "rogueone.html",
-        "rogue1": "rogueone.html",
-        "rogue_1": "rogueone.html",
-        "rogue 1": "rogueone.html",
-        "stargate": "stargate.html",
-    }
-
     # try to match parameter url string with a known dictionary key
     try:
-        html_str = dict[url.lower()]  # assign correct html filename if key matches
+        image, html_str = favs[url.lower()]  # assign correct html filename if key matches
     except:
         html_str = "404.html"  # otherwise assign error page
     return html_str
 
 @le_views.route("/<user_url>")  # route string from everything after domain
 def render_all(user_url):
-    return render_template(get_url(user_url))
+    try:
+        return render_template(get_url(user_url))
+    except TemplateNotFound:
+        abort(500,"JSON Favourites: html file does not exist")
