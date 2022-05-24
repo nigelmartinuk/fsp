@@ -13,14 +13,16 @@ body {
 
 #main_bits {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 98vw;
+    height: 80vh;
+}
+#about {
+    padding: 0 0 1em 0;
 }
 
 #navblock {
     display: flex;
     flex-flow: column wrap;
-    background-color: aqua;
 }
 
 header {
@@ -45,38 +47,85 @@ header {
 
 .thumb_settings {
     display: block;
-    height: 200px;
-    width: 150px;
+    height: 30vh;
+    width: auto;
     padding: 0;
     margin: 0;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* .clickme {
+/* standard setting are for lanscape large format system */
+/* settings for mobile portrait */
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 0.8em;
+        padding-bottom: 1em;
+    }
 
-} */
+    .thumb_settings {
+        height: 120px;
+        width: 90px;
+    }
 
-#bigimg {
-    display: block;
-    height: auto;
-    width: 500px;    
+    .bigimg_settings {
+        height: 50vh;
+    }
+
+    #fullpage_text {
+        font-size: 0.8em;
+    }
 }
 
-.big_img0 { background-image: url("/static/img/large_akira.jpg") ;}
-.big_img1 { background-image: url("/static/img/large_atlantis.jpg") ;}
-.big_img2 { background-image: url("/static/img/large_cryingfreeman.jpg") ;}
-.big_img3 { background-image: url("/static/img/large_fringe.jpg") ;}
-.big_img4 { background-image: url("/static/img/large_princessbride.jpg") ;}
-.big_img5 { background-image: url("/static/img/large_reddwarf.jpg") ;}
-.big_img6 { background-image: url("/static/img/large_rogueone.jpg") ;}
-.big_img7 { background-image: url("/static/img/large_sg1.jpg") ;}
+/* settings for mobile portrait */
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 0.8em;
+        padding-bottom: 1em;
+    }
 
-.thumb_img0 { background-image: url("/static/img/thumb_akira.jpg");}
-.thumb_img1 { background-image: url("/static/img/thumb_atlantis.jpg");}
-.thumb_img2 { background-image: url("/static/img/thumb_cryingfreeman.jpg");}
-.thumb_img3 { background-image: url("/static/img/thumb_fringe.jpg"); }
-.thumb_img4 { background-image: url("/static/img/thumb_princessbride.jpg");}
-.thumb_img5 { background-image: url("/static/img/thumb_reddwarf.jpg");}
-.thumb_img6 { background-image: url("/static/img/thumb_rogueone.jpg");}
-.thumb_img7 { background-image: url("/static/img/thumb_sg1.jpg");}
+    .thumb_settings {
+        /* height: 120px;
+        width: 90px; */
+        height: 30vh;
+        width: auto;
+    }
+
+    .bigimg_settings {
+        height: 50vh;
+    }
+
+    #fullpage_text {
+        font-size: 0.8em;
+    }
+}
+
+/* settings for mobile portrait */
+@media only screen and (max-width: 1024px) and (orientation: landscape) {
+
+    #navblock {
+        flex-flow: row wrap;
+    }
+
+    .thumb_settings {
+        /* height: 120px;
+        width: 90px; */
+        height: 30vh;
+        width: auto;
+    }
+}
+
+/* settings for mobile portrait */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+
+    #navblock {
+        flex-flow: row wrap;
+    }
+
+    .thumb_settings {
+        /* height: 120px;
+        width: 90px; */
+        height: 30vh;
+        width: auto;
+    }
+}

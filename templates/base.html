@@ -15,12 +15,15 @@
     </title>
 </head>
 
-<body onload="appClock()">
+<body onload="init_stuff()">
     <div>
         <header>
             {% block page_title %}
             <!-- unique page title is inserted here -->Base - Missing page title
             {% endblock %}
+            <div id="back_button_div">
+                <button id="back_button" onclick="history.back()">Return to Index</button>
+            </div>
             <div id='appClockTxt'>[clock]</div>
         </header>
         <main>

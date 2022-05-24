@@ -1,15 +1,18 @@
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/loadimgs.css')}}">
+
 {% extends 'base.html' %}
 
-{% block scrip %}
-<link rel="stylesheet" href="{{url_for('static', filename = 'css/loadimgs.css')}}">
-{% endblock %}
 
 {% block title %}My Movies{% endblock %}
 
 {% block page_title %}My movies{% endblock %}
 
 {% block content %}
+<div id="about">Welcome to my Innovate 030522 Full Stack Project website. What you see here is just a few of my
+  favourite things. Click on the image links below to learn more about each item. A button it provided at the top of
+  each webpage to return you to the screen. Enjoy!</div>
 <div id="main_bits">
+
   <nav id="navblock">
 
     <!-- { % for an_entry in favs.values() : % } -->
@@ -17,7 +20,6 @@
     {% for id, vals in favs.items() : %}
     <div>
       {% set img, html = vals %}
-      <!-- <p>id:{{id}}<br>img:{{img}}<br>html:{{html}}</p> -->
       <a href="/{{id}}">
         <img class="thumb_settings" title="Click Me" src="{{url}}/img/{{img}}" alt="{{id}}_thumbnail">
       </a>
@@ -25,5 +27,4 @@
     {% endfor %}
   </nav>
 </div>
-
 {% endblock %}

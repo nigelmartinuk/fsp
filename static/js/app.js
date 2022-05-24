@@ -23,6 +23,7 @@ function raiseBigImg(whichpic) {
 // Code snippet captured from: 
 // https://www.w3schools.com/js/tryit.asp?filename=tryjs_timing_clock
 
+
 function appClock() {
     const today = new Date();
     let h = today.getHours();
@@ -38,4 +39,9 @@ function appClock() {
 
 function zeroPrefix(i) {
     return ((i < 10) ? ("0" + i) : i);  // add zero in front of numbers < 10
+}
+
+function init_stuff() {
+    /* start clock */
+    appClock()
 }
