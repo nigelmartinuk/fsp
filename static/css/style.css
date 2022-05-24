@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300&family=Raleway:wght@200&display=swap');
 
 * {
+    display: block;
     box-sizing: border-box; 
 }
 
@@ -11,35 +12,63 @@ body {
     font-family: 'IBM Plex Serif', serif;
 }
 
-#navbar {
+/* .grid-root {
+    display: grid;
+    grid-template-areas:
+         'header header header' 
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'thumbpic thumbpic bigpic'
+         'clock footer bigpic'
+} */
+
+#main_bits {
     display: flex;
-    flex-wrap: wrap;
-    flex-flow: column wrap;
-    flex-direction: column;
-    background-color: aqua;
-    width: 1000px;
-    height: 700px;
+    width: 100vw;
+    height: 100vh;
 }
 
-.thumb {
+#navbar {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: aqua;
+    min-height: 100vh;
+    width:150px;
+    /* width:400px;
+    height: 700px; */
+}
+
+.thumb_settings {
     display: block;
     height: 98px;
     width: 75px;
     padding: 0;
     margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.clickme {
+/* .clickme {
 
-}
+} */
 
 #bigimg {
     display: block;
-    visibility: hidden;
-    height: 820px;
-    width: 577px;
+    height: auto;
+    width: 500px;    
+}
+
+/* #bigimg {
+    display: inline;
+    /* visibility: hidden; * /
+    height: auto;
+    width: 100%;
     background-color: pink;
-    margin: 0.5em;
+    background-size: contain;
     background:
     url("/static/img/large_atlantis.jpg") no-repeat,
     url("/static/img/large_cryingfreeman.jpg") no-repeat,
@@ -48,20 +77,22 @@ body {
     url("/static/img/large_reddwarf.jpg") no-repeat,
     url("/static/img/large_rogueone.jpg") no-repeat,
     url("/static/img/large_sg1.jpg") no-repeat;
-}
+} */
 
-.large_atlantis { background-image: url("/static/img/large_atlantis.jpg") no-repeat;}
-.large_cryingfreeman { background-image: url("/static/img/large_cryingfreeman.jpg") no-repeat;}
-.large_fringe { background-image: url("/static/img/large_fringe.jpg") no-repeat;}
-.large_princessbride { background-image: url("/static/img/large_princessbride.jpg") no-repeat;}
-.large_reddwarf { background-image: url("/static/img/large_reddwarf.jpg") no-repeat;}
-.large_rogueone { background-image: url("/static/img/large_rogueone.jpg") no-repeat;}
-.large_sgi { background-image: url("/static/img/large_sg1.jpg") no-repeat;}
+.big_img0 { background-image: url("/static/img/large_akira.jpg") ;}
+.big_img1 { background-image: url("/static/img/large_atlantis.jpg") ;}
+.big_img2 { background-image: url("/static/img/large_cryingfreeman.jpg") ;}
+.big_img3 { background-image: url("/static/img/large_fringe.jpg") ;}
+.big_img4 { background-image: url("/static/img/large_princessbride.jpg") ;}
+.big_img5 { background-image: url("/static/img/large_reddwarf.jpg") ;}
+.big_img6 { background-image: url("/static/img/large_rogueone.jpg") ;}
+.big_img7 { background-image: url("/static/img/large_sg1.jpg") ;}
 
-.thumb1 { background-image: url("/static/img/thumb_atlantis.jpg") no-repeat;}
-.thumb2 { background-image: url("/static/img/thumb_cryingfreeman.jpg") no-repeat;}
-.thumb3 { background-image: url("/static/img/thumb_fringe.jpg") no-repeat;}
-.thumb4 { background-image: url("/static/img/thumb_princessbride.jpg") no-repeat;}
-.thumb5 { background-image: url("/static/img/thumb_reddwarf.jpg") no-repeat;}
-.thumb6 { background-image: url("/static/img/thumb_rogueone.jpg") no-repeat;}
-.thumb7 { background-image: url("/static/img/thumb_sg1.jpg") no-repeat;}
+.thumb_img0 { background-image: url("/static/img/thumb_akira.jpg");}
+.thumb_img1 { background-image: url("/static/img/thumb_atlantis.jpg");}
+.thumb_img2 { background-image: url("/static/img/thumb_cryingfreeman.jpg");}
+.thumb_img3 { background-image: url("/static/img/thumb_fringe.jpg"); }
+.thumb_img4 { background-image: url("/static/img/thumb_princessbride.jpg");}
+.thumb_img5 { background-image: url("/static/img/thumb_reddwarf.jpg");}
+.thumb_img6 { background-image: url("/static/img/thumb_rogueone.jpg");}
+.thumb_img7 { background-image: url("/static/img/thumb_sg1.jpg");}

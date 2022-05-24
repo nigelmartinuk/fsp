@@ -1,3 +1,22 @@
+function extractCon(s) {
+    let span = document.createElement("span")
+    span.innerHTML = s
+    return span.textContent || span.innerText
+}
+
+
+function raiseBigImg(whichpic, html_url) {
+    console.log("raise " + whichpic + " "+html_url)
+    let choice = document.getElementById("bigimg");
+    let cmt =  document.getElementById("comment");
+
+    choice.className = whichpic;
+    document.getElementById("bigimg_anchor").href = html_url";
+    //cmt.innerHTML = extractCon("./" + txt);
+    //cmt.innerHTML='<object type="text/html" data="/'+html_url+'" ></object>';
+    //cmt.innerHTML=akira.innerText;
+}
+
 // This code snippet provides an app clock to
 // assist app users to monitor their in app work time
 //

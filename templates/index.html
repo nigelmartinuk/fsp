@@ -5,10 +5,22 @@ My Movies
 {% endblock %}
 
 {% block content %}
-    <nav id="navbar">
-        {% for x in range(25): %}
-          <div id="thumb{{x}}" class="clickme thumb thumb{{ range(1, 8) | random }}"></div>
-        {% endfor %}
-    </nav>
-    <div id="bigimg"></div>
+<div id="main_bits">
+  <nav id="navbar">
+
+    <!-- Single row thumb_img placement -->
+    {% for x in range(8): %}
+    <div id="click_{{x}}" onclick="raiseBigImg('big_img{{x}}', 
+            '{{url_for(pathlist[x])}}')" class="clickme thumb_settings thumb_img{{x}}">
+    </div>
+    {% endfor %}
+  </nav>
+  <div id="bigimg">
+    <!-- <a id="bigimg_anchor" href="">GGGGG
+      <img id="bigimg_pic" src="" alt="">
+    </a> -->
+  </div>
+  <div id="comment"></div>
+</div>
+
 {% endblock %}
