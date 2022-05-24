@@ -11,29 +11,32 @@ le_views = Blueprint(
     "fsp", __name__, template_folder="templates", static_folder="static"
 )
 
-thumbs = {
-    "akira": "thumb_akira.jpg",
-    "atlantis": "thumb_atlantis.jpg",
-    "cryingfreeman": "thumb_cryingfreeman.jpg",
-    "fringe": "thumb_fringe.jpg",
-    "princessbride": "thumb_princessbride.jpg",
-    "reddwarf": "thumb_reddwarf.jpg",
-    "rogueone": "thumb_rogueone.jpg",
-    "sg1": "thumb_sg1.jpg",
-}
+# thumbs = {
+#     "akira": "thumb_akira.jpg",
+#     "atlantis": "thumb_atlantis.jpg",
+#     "cryingfreeman": "thumb_cryingfreeman.jpg",
+#     "fringe": "thumb_fringe.jpg",
+#     "princessbride": "thumb_princessbride.jpg",
+#     "reddwarf": "thumb_reddwarf.jpg",
+#     "rogueone": "thumb_rogueone.jpg",
+#     "sg1": "thumb_sg1.jpg",
+# }
 
 # default route points to the opportunity detail page
-
+# pathlist = {
+#     "akira": "akira.html",
+#     "atlantis": "atlantis.html",
+#     "cryingfreeman": "cryingfreeman.html",
+#     "fringe": "fringe.html",
+#     "princessbride": "princessbride.html",
+#     "reddwarf": "reddwarf.html",
+#     "rogueone": "rogueone.html",
+#     "stargate": "stargate.html",
+# }
 
 @le_views.route("/")
 def landing_page():
-    return render_template("index.html",pathlist=pathlist)
-
-
-# these three routes point to the index.html page
-# @le_views.route("/tom")
-# def akira() :
-#     return render_template("akira.html")
+    return render_template("index.html")
 
 @le_views.route("/index")
 @le_views.route("/default")
@@ -77,7 +80,6 @@ def get_url(url):
     except:
         html_str = "404.html"  # otherwise assign error page
     return html_str
-
 
 @le_views.route("/<user_url>")  # route string from everything after domain
 def render_all(user_url):

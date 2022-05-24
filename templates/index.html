@@ -10,8 +10,9 @@ My Movies
 
     <!-- Single row thumb_img placement -->
     {% for x in range(8): %}
-    <div id="click_{{x}}" onclick="raiseBigImg('big_img{{x}}', 
-            '{{url_for(pathlist[x])}}')" class="clickme thumb_settings thumb_img{{x}}">
+
+    <div id="click_{{x}}" onclick="raiseBigImg('big_img{{x}}',)"
+         class="clickme thumb_settings thumb_img{{x}}">
     </div>
     {% endfor %}
   </nav>
